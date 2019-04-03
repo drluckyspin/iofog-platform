@@ -12,14 +12,11 @@ blocks:
         - name: Deploy
           commands:
             - checkout
-            - make install-kubectl          # Kubernetes CLI
-            - make install-terraform        # Terraform CLI
-            - make install-gcloud           # GCP CLI
-            - make install-ansible          # Install ansible
-            - make deploy-iofog-gcp         # Deploy Kubernetes cluster on GKE and deploy ioFog services on cluster
+            - make install
+            - make deploy         # Deploy Kubernetes cluster on GKE and deploy ioFog services on cluster
             - make test                     # Test ioFog services
             - make rm-gcp                   # Teardown cluster
-            - TAG=rel make push-imgs        # Push release packages
+           
   
 #  - name: "Deployment"
 #    task:
